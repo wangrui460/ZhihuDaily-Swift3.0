@@ -9,10 +9,11 @@
 /* Begin PBXBuildFile section */
 		1AB8076D1EBC0D17007B070B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB8076C1EBC0D17007B070B /* AppDelegate.swift */; };
 		1AB8076F1EBC0D17007B070B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB8076E1EBC0D17007B070B /* ViewController.swift */; };
-		1AB807721EBC0D17007B070B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AB807701EBC0D17007B070B /* Main.storyboard */; };
 		1AB807741EBC0D17007B070B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AB807731EBC0D17007B070B /* Assets.xcassets */; };
 		1AB807771EBC0D17007B070B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AB807751EBC0D17007B070B /* LaunchScreen.storyboard */; };
 		1AB807821EBC0D17007B070B /* ZhihuDaily_Swift3_0Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB807811EBC0D17007B070B /* ZhihuDaily_Swift3_0Tests.swift */; };
+		1AB8078E1EBC1200007B070B /* NetWorkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB8078D1EBC1200007B070B /* NetWorkHelper.swift */; };
+		AE3A5C601E1BC1BDAE5DA84B /* Pods_ZhihuDaily_Swift3_0.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBC724E033634DB27B0994AB /* Pods_ZhihuDaily_Swift3_0.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +30,16 @@
 		1AB807691EBC0D17007B070B /* ZhihuDaily-Swift3.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ZhihuDaily-Swift3.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AB8076C1EBC0D17007B070B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1AB8076E1EBC0D17007B070B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1AB807711EBC0D17007B070B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1AB807731EBC0D17007B070B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1AB807761EBC0D17007B070B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1AB807781EBC0D17007B070B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1AB8077D1EBC0D17007B070B /* ZhihuDaily-Swift3.0Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ZhihuDaily-Swift3.0Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AB807811EBC0D17007B070B /* ZhihuDaily_Swift3_0Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZhihuDaily_Swift3_0Tests.swift; sourceTree = "<group>"; };
 		1AB807831EBC0D17007B070B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1AB8078D1EBC1200007B070B /* NetWorkHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWorkHelper.swift; sourceTree = "<group>"; };
+		DBC724E033634DB27B0994AB /* Pods_ZhihuDaily_Swift3_0.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZhihuDaily_Swift3_0.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCBCED4F27CAC29AA5E54C38 /* Pods-ZhihuDaily-Swift3.0.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhihuDaily-Swift3.0.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZhihuDaily-Swift3.0/Pods-ZhihuDaily-Swift3.0.debug.xcconfig"; sourceTree = "<group>"; };
+		FBD797AEF064E66456D1D57E /* Pods-ZhihuDaily-Swift3.0.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhihuDaily-Swift3.0.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZhihuDaily-Swift3.0/Pods-ZhihuDaily-Swift3.0.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE3A5C601E1BC1BDAE5DA84B /* Pods_ZhihuDaily_Swift3_0.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +67,8 @@
 				1AB8076B1EBC0D17007B070B /* ZhihuDaily-Swift3.0 */,
 				1AB807801EBC0D17007B070B /* ZhihuDaily-Swift3.0Tests */,
 				1AB8076A1EBC0D17007B070B /* Products */,
+				47AFF6BC1DDB3A0F21E3F11A /* Pods */,
+				540779D1A3D4568B1B52586F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,8 +85,8 @@
 			isa = PBXGroup;
 			children = (
 				1AB8076C1EBC0D17007B070B /* AppDelegate.swift */,
+				1AB8078C1EBC1200007B070B /* NetWork */,
 				1AB8076E1EBC0D17007B070B /* ViewController.swift */,
-				1AB807701EBC0D17007B070B /* Main.storyboard */,
 				1AB807731EBC0D17007B070B /* Assets.xcassets */,
 				1AB807751EBC0D17007B070B /* LaunchScreen.storyboard */,
 				1AB807781EBC0D17007B070B /* Info.plist */,
@@ -96,6 +103,31 @@
 			path = "ZhihuDaily-Swift3.0Tests";
 			sourceTree = "<group>";
 		};
+		1AB8078C1EBC1200007B070B /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+				1AB8078D1EBC1200007B070B /* NetWorkHelper.swift */,
+			);
+			path = NetWork;
+			sourceTree = "<group>";
+		};
+		47AFF6BC1DDB3A0F21E3F11A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DCBCED4F27CAC29AA5E54C38 /* Pods-ZhihuDaily-Swift3.0.debug.xcconfig */,
+				FBD797AEF064E66456D1D57E /* Pods-ZhihuDaily-Swift3.0.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		540779D1A3D4568B1B52586F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DBC724E033634DB27B0994AB /* Pods_ZhihuDaily_Swift3_0.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +135,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1AB807861EBC0D17007B070B /* Build configuration list for PBXNativeTarget "ZhihuDaily-Swift3.0" */;
 			buildPhases = (
+				E9D372C74AFE08FF011B502D /* [CP] Check Pods Manifest.lock */,
 				1AB807651EBC0D17007B070B /* Sources */,
 				1AB807661EBC0D17007B070B /* Frameworks */,
 				1AB807671EBC0D17007B070B /* Resources */,
+				9E6B494A3E25A14D3C789E20 /* [CP] Embed Pods Frameworks */,
+				ACA9FDA8301BDF44AB42B1C7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -183,7 +218,6 @@
 			files = (
 				1AB807771EBC0D17007B070B /* LaunchScreen.storyboard in Resources */,
 				1AB807741EBC0D17007B070B /* Assets.xcassets in Resources */,
-				1AB807721EBC0D17007B070B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +230,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9E6B494A3E25A14D3C789E20 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZhihuDaily-Swift3.0/Pods-ZhihuDaily-Swift3.0-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ACA9FDA8301BDF44AB42B1C7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZhihuDaily-Swift3.0/Pods-ZhihuDaily-Swift3.0-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E9D372C74AFE08FF011B502D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1AB807651EBC0D17007B070B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -203,6 +285,7 @@
 			files = (
 				1AB8076F1EBC0D17007B070B /* ViewController.swift in Sources */,
 				1AB8076D1EBC0D17007B070B /* AppDelegate.swift in Sources */,
+				1AB8078E1EBC1200007B070B /* NetWorkHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,14 +308,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		1AB807701EBC0D17007B070B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1AB807711EBC0D17007B070B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1AB807751EBC0D17007B070B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -339,6 +414,7 @@
 		};
 		1AB807871EBC0D17007B070B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DCBCED4F27CAC29AA5E54C38 /* Pods-ZhihuDaily-Swift3.0.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 652U6LDTX4;
@@ -352,6 +428,7 @@
 		};
 		1AB807881EBC0D17007B070B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FBD797AEF064E66456D1D57E /* Pods-ZhihuDaily-Swift3.0.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 652U6LDTX4;
@@ -412,6 +489,7 @@
 				1AB807881EBC0D17007B070B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1AB807891EBC0D17007B070B /* Build configuration list for PBXNativeTarget "ZhihuDaily-Swift3.0Tests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +498,7 @@
 				1AB8078B1EBC0D17007B070B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
