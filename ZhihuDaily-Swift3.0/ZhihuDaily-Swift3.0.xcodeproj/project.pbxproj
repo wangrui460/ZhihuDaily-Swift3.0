@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A0EFA8C1EBD87CD008BEF60 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0EFA8B1EBD87CD008BEF60 /* Global.swift */; };
 		1AB8076D1EBC0D17007B070B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB8076C1EBC0D17007B070B /* AppDelegate.swift */; };
 		1AB8076F1EBC0D17007B070B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB8076E1EBC0D17007B070B /* ViewController.swift */; };
 		1AB807741EBC0D17007B070B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AB807731EBC0D17007B070B /* Assets.xcassets */; };
-		1AB807771EBC0D17007B070B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AB807751EBC0D17007B070B /* LaunchScreen.storyboard */; };
 		1AB807821EBC0D17007B070B /* ZhihuDaily_Swift3_0Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB807811EBC0D17007B070B /* ZhihuDaily_Swift3_0Tests.swift */; };
 		1AB8078E1EBC1200007B070B /* NetWorkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB8078D1EBC1200007B070B /* NetWorkHelper.swift */; };
 		AE3A5C601E1BC1BDAE5DA84B /* Pods_ZhihuDaily_Swift3_0.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBC724E033634DB27B0994AB /* Pods_ZhihuDaily_Swift3_0.framework */; };
@@ -27,11 +27,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A0EFA8B1EBD87CD008BEF60 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		1AB807691EBC0D17007B070B /* ZhihuDaily-Swift3.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ZhihuDaily-Swift3.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AB8076C1EBC0D17007B070B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1AB8076E1EBC0D17007B070B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1AB807731EBC0D17007B070B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1AB807761EBC0D17007B070B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1AB807781EBC0D17007B070B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1AB8077D1EBC0D17007B070B /* ZhihuDaily-Swift3.0Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ZhihuDaily-Swift3.0Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AB807811EBC0D17007B070B /* ZhihuDaily_Swift3_0Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZhihuDaily_Swift3_0Tests.swift; sourceTree = "<group>"; };
@@ -85,10 +85,10 @@
 			isa = PBXGroup;
 			children = (
 				1AB8076C1EBC0D17007B070B /* AppDelegate.swift */,
+				1A0EFA8B1EBD87CD008BEF60 /* Global.swift */,
 				1AB8078C1EBC1200007B070B /* NetWork */,
 				1AB8076E1EBC0D17007B070B /* ViewController.swift */,
 				1AB807731EBC0D17007B070B /* Assets.xcassets */,
-				1AB807751EBC0D17007B070B /* LaunchScreen.storyboard */,
 				1AB807781EBC0D17007B070B /* Info.plist */,
 			);
 			path = "ZhihuDaily-Swift3.0";
@@ -216,7 +216,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AB807771EBC0D17007B070B /* LaunchScreen.storyboard in Resources */,
 				1AB807741EBC0D17007B070B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A0EFA8C1EBD87CD008BEF60 /* Global.swift in Sources */,
 				1AB8076F1EBC0D17007B070B /* ViewController.swift in Sources */,
 				1AB8076D1EBC0D17007B070B /* AppDelegate.swift in Sources */,
 				1AB8078E1EBC1200007B070B /* NetWorkHelper.swift in Sources */,
@@ -306,17 +306,6 @@
 			targetProxy = 1AB8077E1EBC0D17007B070B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		1AB807751EBC0D17007B070B /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1AB807761EBC0D17007B070B /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		1AB807841EBC0D17007B070B /* Debug */ = {
@@ -417,6 +406,7 @@
 			baseConfigurationReference = DCBCED4F27CAC29AA5E54C38 /* Pods-ZhihuDaily-Swift3.0.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 652U6LDTX4;
 				INFOPLIST_FILE = "ZhihuDaily-Swift3.0/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -431,6 +421,7 @@
 			baseConfigurationReference = FBD797AEF064E66456D1D57E /* Pods-ZhihuDaily-Swift3.0.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 652U6LDTX4;
 				INFOPLIST_FILE = "ZhihuDaily-Swift3.0/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
