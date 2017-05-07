@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
     {
-        NetWorkHelper.requestDelegate(method: .get, url: "http://news-at.zhihu.com/api/7/prefetch-launch-images/1080*1920", requestName: requestSplashImage, parameters: nil, delegate: self)
+        WRNetWrapper.requestDelegate(method: .get, url: "http://news-at.zhihu.com/api/7/prefetch-launch-images/1080*1920", requestName: requestSplashImage, parameters: nil, delegate: self)
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = UIColor.white
         let navVC:UINavigationController = UINavigationController.init(rootViewController: ViewController())
@@ -71,8 +71,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 
-// MARK: - NetWorkHelperDelegate
-extension AppDelegate: NetWorkHelperDelegate
+// MARK: - WRNetWrapperDelegate
+extension AppDelegate: WRNetWrapperDelegate
 {
     func netWortDidSuccess(result: AnyObject, requestName: String, parameters: NSDictionary?)
     {

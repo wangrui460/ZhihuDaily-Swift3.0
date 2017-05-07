@@ -15,16 +15,16 @@ import SwiftyJSON
 // 网络请求超时时间
 let NetworkTimeoutInterval:Double = 10
 
-@objc protocol NetWorkHelperDelegate:NSObjectProtocol
+@objc protocol WRNetWrapperDelegate:NSObjectProtocol
 {
     // TODO：研究 如果把result的类型改为Any会怎么样
     @objc optional func netWortDidSuccess(result:AnyObject,requestName:String,parameters:NSDictionary?);
     @objc optional func netWortDidFailed (result:AnyObject,requestName:String,parameters:NSDictionary?);
 }
 
-class NetWorkHelper: NSObject
+class WRNetWrapper: NSObject
 {
-    var delegate:NetWorkHelperDelegate?
+    var delegate:WRNetWrapperDelegate?
     static var sessionManager:SessionManager? = nil
     
     /// 闭包回调请求(类方法)
