@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
     {
-        WRNetWrapper.requestDelegate(method: .get, url: "http://news-at.zhihu.com/api/7/prefetch-launch-images/1080*1920", requestName: requestSplashImage, parameters: nil, delegate: self)
+        WRApiContainer.requestSplashImage(delegate: self)
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = UIColor.white
         let navVC:UINavigationController = UINavigationController.init(rootViewController: ViewController())

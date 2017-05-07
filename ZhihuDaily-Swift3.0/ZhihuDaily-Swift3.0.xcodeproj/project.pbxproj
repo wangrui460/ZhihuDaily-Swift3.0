@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1A0EFA8C1EBD87CD008BEF60 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0EFA8B1EBD87CD008BEF60 /* Global.swift */; };
+		1A0F74A81EBF625D00D5F788 /* WRApiContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0F74A71EBF625D00D5F788 /* WRApiContainer.swift */; };
 		1AB8076D1EBC0D17007B070B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB8076C1EBC0D17007B070B /* AppDelegate.swift */; };
 		1AB8076F1EBC0D17007B070B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB8076E1EBC0D17007B070B /* ViewController.swift */; };
 		1AB807741EBC0D17007B070B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AB807731EBC0D17007B070B /* Assets.xcassets */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		1A0EFA8B1EBD87CD008BEF60 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		1A0F74A71EBF625D00D5F788 /* WRApiContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRApiContainer.swift; sourceTree = "<group>"; };
 		1AB807691EBC0D17007B070B /* ZhihuDaily-Swift3.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ZhihuDaily-Swift3.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AB8076C1EBC0D17007B070B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1AB8076E1EBC0D17007B070B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				1AB8078D1EBC1200007B070B /* WRNetWrapper.swift */,
+				1A0F74A71EBF625D00D5F788 /* WRApiContainer.swift */,
 			);
 			path = NetWork;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A0F74A81EBF625D00D5F788 /* WRApiContainer.swift in Sources */,
 				1A0EFA8C1EBD87CD008BEF60 /* Global.swift in Sources */,
 				1AB8076F1EBC0D17007B070B /* ViewController.swift in Sources */,
 				1AB8076D1EBC0D17007B070B /* AppDelegate.swift in Sources */,
