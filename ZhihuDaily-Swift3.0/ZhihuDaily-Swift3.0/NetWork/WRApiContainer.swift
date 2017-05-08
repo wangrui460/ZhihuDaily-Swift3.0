@@ -32,10 +32,17 @@ class WRApiContainer: NSObject
 extension WRApiContainer
 {
     // 启动页闪屏
-    class func requestSplashImage(delegate:WRNetWrapperDelegate)
+    class func requestSplashImage(reqName:String, delegate:WRNetWrapperDelegate)
     {
         let curURL = BaseURL.appending("7/prefetch-launch-images/1080*1920")
-        WRRequest(url: curURL, requestName: "requestSplashImage", delegate: delegate)
+        WRRequest(url: curURL, requestName: reqName, delegate: delegate)
+    }
+    
+    // App版本检测
+    class func requestAppVersion(reqName:String, delegate:WRNetWrapperDelegate)
+    {
+        let curURL = BaseURL.appending("4/version/ios/2.3.0")
+        WRRequest(url: curURL, requestName: reqName, delegate: delegate)
     }
     
     

@@ -15,16 +15,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     let requestSplashImage = "requestSplashImage"
+    let requestAppVersion = "requestAppVersion"
     let bgImageView:UIImageView = UIImageView(frame: UIScreen.main.bounds)
     var advImageView:UIImageView?
     let SPLASHIMAGE = "SPLASHIMAGE"
+    let navVC:UINavigationController = UINavigationController.init(rootViewController: ViewController())
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
     {
-        WRApiContainer.requestSplashImage(delegate: self)
+        WRApiContainer.requestSplashImage(reqName: requestSplashImage, delegate: self)
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = UIColor.white
-        let navVC:UINavigationController = UINavigationController.init(rootViewController: ViewController())
         window?.rootViewController = navVC
         window?.makeKeyAndVisible()
         
@@ -64,6 +65,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 self.bgImageView.alpha = 0
             },completion: { (finish) in
                 self.bgImageView.removeFromSuperview()
+                WRApiContainer.requestAppVersion(reqName: self.requestAppVersion, delegate: self)
             })
         })
     }
@@ -95,12 +97,34 @@ extension AppDelegate: WRNetWrapperDelegate
                     UserDefaults.standard.set(data, forKey: weakSelf.SPLASHIMAGE)
                 }
             })
+            return
+        }
+        
+        if (requestName == requestAppVersion)
+        {
+            let json = result as! JSON
+            let status = json["status"].int
+            if status == 1
+            {
+                let msg    = json["msg"].string
+                let alertVC = UIAlertController(title: "版本更新提示", message: msg, preferredStyle: .alert)
+                let sureAction = UIAlertAction(title: "前往", style: .destructive, handler:
+                    { (success) in
+                        // 因为不知道知乎日报的appid，所以这里就调到AppStore的首页
+                        let url = URL(string: "itms-apps://itunes.apple.com/")
+                        UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+                })
+                let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+                alertVC.addAction(cancelAction)
+                alertVC.addAction(sureAction)
+                navVC.present(alertVC, animated: true, completion: nil)
+            }
         }
     }
     
     func netWortDidFailed(result: AnyObject, requestName: String, parameters: NSDictionary?)
     {
-        print(result.error)
+        print(result.error ?? "")
     }
 }
 
