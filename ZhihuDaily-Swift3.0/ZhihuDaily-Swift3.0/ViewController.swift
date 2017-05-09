@@ -7,23 +7,39 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class ViewController: UIViewController
 {
+    let requestLatestNews = "requestLatestNews"
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         self.title = "知乎日报"
+        WRApiContainer.requestLatestNews(reqName: requestLatestNews, delegate: self)
     }
-
-    
-    
-    override func didReceiveMemoryWarning()
-    {
-        super.didReceiveMemoryWarning()
-        
-    }
-
-
 }
+
+
+extension ViewController: WRNetWrapperDelegate
+{
+    func netWortDidSuccess(result:AnyObject,requestName:String,parameters:NSDictionary?)
+    {
+        if (requestName == requestLatestNews)
+        {
+            let json = result as! JSON
+            print("--------------------")
+        }
+    }
+    
+    func netWortDidFailed (result:AnyObject,requestName:String,parameters:NSDictionary?)
+    {
+        print(result.error ?? "")
+    }
+}
+
+
+
+
 

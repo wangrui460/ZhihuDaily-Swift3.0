@@ -18,5 +18,6 @@ target 'ZhihuDaily-Swift3.0' do
     pod 'Alamofire', '~> 4.4'
     pod 'SwiftyJSON'
     pod 'Kingfisher'
+    pod 'SnapKit', '~> 3.2.0'
 
 end

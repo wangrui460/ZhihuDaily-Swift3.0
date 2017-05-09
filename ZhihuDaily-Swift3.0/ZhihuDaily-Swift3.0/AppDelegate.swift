@@ -9,6 +9,7 @@
 import UIKit
 import SwiftyJSON
 import Kingfisher
+import SnapKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,11 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     let requestSplashImage = "requestSplashImage"
     let requestAppVersion = "requestAppVersion"
-    let bgImageView:UIImageView = UIImageView(frame: UIScreen.main.bounds)
+    var bgImageView:UIImageView? = UIImageView(frame: UIScreen.main.bounds)
     var advImageView:UIImageView?
+    let jumpBtn = UIButton()
     let SPLASHIMAGE = "SPLASHIMAGE"
     let navVC:UINavigationController = UINavigationController.init(rootViewController: ViewController())
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
     {
         WRApiContainer.requestSplashImage(reqName: requestSplashImage, delegate: self)
@@ -38,8 +40,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     /// 添加广告
     private func addAdvertisement()
     {
-        bgImageView.image = UIImage(named: "backImage")
-        window!.addSubview(bgImageView)
+        bgImageView?.image = UIImage(named: "backImage")
+        window!.addSubview(bgImageView!)
         if (IS_SCREEN_4_INCH) {
             advImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight - 100))
         } else if (IS_SCREEN_47_INCH) {
@@ -47,25 +49,49 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             advImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight - 130))
         }
-        bgImageView.addSubview(advImageView!)
+        bgImageView?.addSubview(advImageView!)
         if let data = UserDefaults.standard.object(forKey: SPLASHIMAGE) as? Data
         {
             advImageView?.image = UIImage(data: data)
+        }
+        
+        bgImageView?.isUserInteractionEnabled = true
+        advImageView?.isUserInteractionEnabled = true
+        jumpBtn.setTitle("跳过", for: .normal)
+        jumpBtn.titleLabel?.font = UIFont.systemFont(ofSize: 13)
+        jumpBtn.backgroundColor = UIColor.black.withAlphaComponent(0.9)
+        jumpBtn.setTitleColor(UIColor.white, for: .normal)
+        advImageView?.addSubview(jumpBtn)
+        jumpBtn.snp.makeConstraints { (make) in
+            make.width.equalTo(50)
+            make.height.equalTo(25)
+            make.top.equalTo(self.advImageView!).offset(30)
+            make.right.equalTo(self.advImageView!).offset(-30)
+        }
+        jumpBtn.layer.cornerRadius = 6
+        jumpBtn.layer.masksToBounds = true
+        jumpBtn.setTapActionWithBlock { [weak self] in
+            self?.bgImageView?.removeFromSuperview()
+            self?.bgImageView = nil
+            WRApiContainer.requestAppVersion(reqName: self!.requestAppVersion, delegate: self!)
         }
     }
 
     /// 移除广告
     private func removeAdvertisement()
     {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5, execute:
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute:
         {
             UIView.animate(withDuration: 1.0, animations:
             {
                 self.advImageView?.alpha = 0
-                self.bgImageView.alpha = 0
+                self.bgImageView?.alpha = 0
             },completion: { (finish) in
-                self.bgImageView.removeFromSuperview()
-                WRApiContainer.requestAppVersion(reqName: self.requestAppVersion, delegate: self)
+                self.bgImageView?.removeFromSuperview()
+                self.bgImageView = nil
+                if self.bgImageView != nil {
+                    WRApiContainer.requestAppVersion(reqName: self.requestAppVersion, delegate: self)
+                }
             })
         })
     }

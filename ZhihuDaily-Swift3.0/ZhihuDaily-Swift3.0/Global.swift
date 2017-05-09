@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import SwiftyJSON
+import Kingfisher
+import SnapKit
 
 let NavBarHeigh  = 44.0
 let NavBarBottom = 64.0

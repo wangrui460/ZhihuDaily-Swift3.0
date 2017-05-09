@@ -45,7 +45,12 @@ extension WRApiContainer
         WRRequest(url: curURL, requestName: reqName, delegate: delegate)
     }
     
-    
+    // 最新消息
+    class func requestLatestNews(reqName:String, delegate:WRNetWrapperDelegate)
+    {
+        let curURL = BaseURL.appending("4/news/latest")
+        WRRequest(url: curURL, requestName: reqName, delegate: delegate)
+    }
 }
 
 
