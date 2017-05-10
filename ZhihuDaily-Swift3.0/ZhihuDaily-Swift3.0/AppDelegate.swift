@@ -25,7 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
     {
-        WRApiContainer.requestAppVersion(reqName: self.requestAppVersion, delegate: self)
         WRApiContainer.requestSplashImage(reqName: requestSplashImage, delegate: self)
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = UIColor.white
@@ -89,10 +88,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 self.bgImageView?.alpha = 0
             },completion: { (finish) in
                 self.bgImageView?.removeFromSuperview()
-                self.bgImageView = nil
                 if self.bgImageView != nil {
                     WRApiContainer.requestAppVersion(reqName: self.requestAppVersion, delegate: self)
                 }
+                self.bgImageView = nil
             })
         })
     }
@@ -107,7 +106,7 @@ extension AppDelegate: WRNetWrapperDelegate
     {
         if (requestName == requestSplashImage)
         {
-            let json = result as! JSON
+            let json = JSON(result)
 //            let dict = json.dictionaryValue
 //            let creatives = dict["creatives"]
 //            let url = creatives?[0]["url"].string
@@ -129,7 +128,7 @@ extension AppDelegate: WRNetWrapperDelegate
         
         if (requestName == requestAppVersion)
         {
-            let json = result as! JSON
+            let json = JSON(result)
             let status = json["status"].int
             if status == 1
             {

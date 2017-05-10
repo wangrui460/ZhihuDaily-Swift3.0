@@ -39,10 +39,10 @@ class WRNetWrapper: NSObject
         let config:URLSessionConfiguration = URLSessionConfiguration.default
         config.timeoutIntervalForRequest = NetworkTimeoutInterval
         sessionManager = SessionManager(configuration: config)
-        sessionManager?.request(url, method: method, parameters: parameters as? Parameters).responseJSON
+        
+        Alamofire.request(url, method: method, parameters: parameters as? Parameters).responseJSON
         { (response) in
             let data = response.result.value
-//            let json = JSON(data as Any)
             if (response.result.isSuccess)
             {
                 finishedCallback(data as AnyObject, nil)
@@ -68,11 +68,9 @@ class WRNetWrapper: NSObject
         let config:URLSessionConfiguration = URLSessionConfiguration.default
         config.timeoutIntervalForRequest = NetworkTimeoutInterval
         sessionManager = SessionManager(configuration: config)
-        sessionManager?.request(url, method: method, parameters: parameters as? Parameters).responseJSON
+        Alamofire.request(url, method: method, parameters: parameters as? Parameters).responseJSON
         { (response) in
             let data = response.result.value
-//            let json = JSON(data as Any)
-
             if (response.result.isSuccess)
             {
                 delegate.netWortDidSuccess?(result: data as AnyObject, requestName: requestName, parameters: parameters)
