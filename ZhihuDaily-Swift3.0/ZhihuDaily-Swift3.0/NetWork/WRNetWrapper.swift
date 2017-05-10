@@ -10,7 +10,6 @@
 // tips：因为Swift存在namespace，所以就不需要写类前缀了
 import UIKit
 import Alamofire
-//import SwiftyJSON
 
 // 网络请求超时时间
 let NetworkTimeoutInterval:Double = 10
