@@ -31,6 +31,7 @@ extension ViewController: WRNetWrapperDelegate
         {
 //            let json = result as! JSON
             let news = News.parseJson(json: result as! [String:AnyObject])
+            print(news.format_date)
             print("--------------------")
         }
     }

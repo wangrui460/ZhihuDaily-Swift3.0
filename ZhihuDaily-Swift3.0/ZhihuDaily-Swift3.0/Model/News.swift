@@ -14,6 +14,15 @@ struct News
     var date:String
     var stories:[Story]
     var top_stories:[Story]?    // 可能没有 top_stories
+    
+    var format_date:String {
+        let yearIndex = date.index(date.startIndex, offsetBy: 4)
+        let dayIndex = date.index(date.endIndex, offsetBy: -2)
+        
+        let month = date.substring(with: yearIndex ..< dayIndex)
+        let day   = date.substring(from: dayIndex)
+        return "\(month)月\(day)日 \(date.currentWeekDay())"
+    }
 }
 
 extension News

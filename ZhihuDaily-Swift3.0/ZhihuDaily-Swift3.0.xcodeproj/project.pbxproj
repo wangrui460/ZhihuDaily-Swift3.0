@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1A0EFA8C1EBD87CD008BEF60 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0EFA8B1EBD87CD008BEF60 /* Global.swift */; };
 		1A0F74A81EBF625D00D5F788 /* WRApiContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0F74A71EBF625D00D5F788 /* WRApiContainer.swift */; };
+		1A680F071EC30BDA00E24BD8 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A680F061EC30BDA00E24BD8 /* String+Extension.swift */; };
 		1AAE31E71EC2A44200CCFAC1 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAE31E61EC2A44200CCFAC1 /* Story.swift */; };
 		1AAE31E91EC2BB5100CCFAC1 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAE31E81EC2BB5100CCFAC1 /* News.swift */; };
 		1AB8076D1EBC0D17007B070B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB8076C1EBC0D17007B070B /* AppDelegate.swift */; };
@@ -33,6 +34,7 @@
 /* Begin PBXFileReference section */
 		1A0EFA8B1EBD87CD008BEF60 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		1A0F74A71EBF625D00D5F788 /* WRApiContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRApiContainer.swift; sourceTree = "<group>"; };
+		1A680F061EC30BDA00E24BD8 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		1AAE31E61EC2A44200CCFAC1 /* Story.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		1AAE31E81EC2BB5100CCFAC1 /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		1AB807691EBC0D17007B070B /* ZhihuDaily-Swift3.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ZhihuDaily-Swift3.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				1AE39DEF1EC2105E008092BC /* UIView+Event.swift */,
+				1A680F061EC30BDA00E24BD8 /* String+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AAE31E71EC2A44200CCFAC1 /* Story.swift in Sources */,
+				1A680F071EC30BDA00E24BD8 /* String+Extension.swift in Sources */,
 				1A0F74A81EBF625D00D5F788 /* WRApiContainer.swift in Sources */,
 				1AAE31E91EC2BB5100CCFAC1 /* News.swift in Sources */,
 				1A0EFA8C1EBD87CD008BEF60 /* Global.swift in Sources */,
