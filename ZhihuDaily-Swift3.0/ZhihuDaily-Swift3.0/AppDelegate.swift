@@ -71,10 +71,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         jumpBtn.layer.cornerRadius = 6
         jumpBtn.layer.masksToBounds = true
         jumpBtn.setTapActionWithBlock { [weak self] in
-            self?.bgImageView?.removeFromSuperview()
-            self?.bgImageView = nil
-            WRApiContainer.requestAppVersion(reqName: self!.requestAppVersion, delegate: self!)
+            if let weakSelf = self
+            {
+                weakSelf.bgImageView?.removeFromSuperview()
+                weakSelf.bgImageView = nil
+                WRApiContainer.requestAppVersion(reqName: weakSelf.requestAppVersion, delegate: weakSelf)
+            }
         }
+        jumpBtn.isHidden = true
     }
 
     /// 移除广告
@@ -119,6 +123,7 @@ extension AppDelegate: WRNetWrapperDelegate
             { [weak self] (image, error, cachtType, url) in
                 if let weakSelf = self
                 {
+                    weakSelf.jumpBtn.isHidden = false
                     let data = UIImagePNGRepresentation(image!)
                     UserDefaults.standard.set(data, forKey: weakSelf.SPLASHIMAGE)
                 }
