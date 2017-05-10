@@ -10,7 +10,7 @@
 // tips：因为Swift存在namespace，所以就不需要写类前缀了
 import UIKit
 import Alamofire
-import SwiftyJSON
+//import SwiftyJSON
 
 // 网络请求超时时间
 let NetworkTimeoutInterval:Double = 10
@@ -18,8 +18,8 @@ let NetworkTimeoutInterval:Double = 10
 @objc protocol WRNetWrapperDelegate:NSObjectProtocol
 {
     // TODO：研究 如果把result的类型改为Any会怎么样
-    @objc optional func netWortDidSuccess(result:AnyObject,requestName:String,parameters:NSDictionary?);
-    @objc optional func netWortDidFailed (result:AnyObject,requestName:String,parameters:NSDictionary?);
+    @objc optional func netWortDidSuccess(result:AnyObject, requestName:String, parameters:NSDictionary?);
+    @objc optional func netWortDidFailed (result:AnyObject, error:Error?, requestName:String, parameters:NSDictionary?);
 }
 
 class WRNetWrapper: NSObject
@@ -34,7 +34,7 @@ class WRNetWrapper: NSObject
     ///   - url: 可以是字符串，也可以是URL
     ///   - parameters: 参数字典
     ///   - finishedCallback: 完成请求的回调
-    class func request(method:HTTPMethod, url:String, parameters:NSDictionary?, finishedCallback:  @escaping (_ result : Any, _ error: Error?) -> ())
+    class func request(method:HTTPMethod, url:String, parameters:NSDictionary?, finishedCallback:  @escaping (_ result : AnyObject, _ error: Error?) -> ())
     {
         let config:URLSessionConfiguration = URLSessionConfiguration.default
         config.timeoutIntervalForRequest = NetworkTimeoutInterval
@@ -42,14 +42,14 @@ class WRNetWrapper: NSObject
         sessionManager?.request(url, method: method, parameters: parameters as? Parameters).responseJSON
         { (response) in
             let data = response.result.value
-            let json = JSON(data as Any)
+//            let json = JSON(data as Any)
             if (response.result.isSuccess)
             {
-                finishedCallback(json, nil)
+                finishedCallback(data as AnyObject, nil)
             }
             else
             {
-                finishedCallback(json,response.result.error)
+                finishedCallback(data as AnyObject,response.result.error)
             }
         }
     }
@@ -71,15 +71,15 @@ class WRNetWrapper: NSObject
         sessionManager?.request(url, method: method, parameters: parameters as? Parameters).responseJSON
         { (response) in
             let data = response.result.value
-            let json = JSON(data as Any)
+//            let json = JSON(data as Any)
 
             if (response.result.isSuccess)
             {
-                delegate.netWortDidSuccess?(result: json as AnyObject, requestName: requestName, parameters: parameters)
+                delegate.netWortDidSuccess?(result: data as AnyObject, requestName: requestName, parameters: parameters)
             }
             else
             {
-                delegate.netWortDidFailed?(result: json as AnyObject, requestName: requestName, parameters: parameters)
+                delegate.netWortDidFailed?(result: data as AnyObject, error:response.error, requestName: requestName, parameters: parameters)
             }
         }
     }

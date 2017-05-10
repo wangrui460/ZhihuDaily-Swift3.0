@@ -41,7 +41,7 @@ extension WRApiContainer
     // App版本检测
     class func requestAppVersion(reqName:String, delegate:WRNetWrapperDelegate)
     {
-        let curURL = BaseURL.appending("4/version/ios/2.3.0")
+        let curURL = BaseURL.appending("7/version/ios/2.3.0")
         WRRequest(url: curURL, requestName: reqName, delegate: delegate)
     }
     

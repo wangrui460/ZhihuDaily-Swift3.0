@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
     {
+        WRApiContainer.requestAppVersion(reqName: self.requestAppVersion, delegate: self)
         WRApiContainer.requestSplashImage(reqName: requestSplashImage, delegate: self)
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = UIColor.white
@@ -148,9 +149,9 @@ extension AppDelegate: WRNetWrapperDelegate
         }
     }
     
-    func netWortDidFailed(result: AnyObject, requestName: String, parameters: NSDictionary?)
+    func netWortDidFailed(result: AnyObject, error:Error?, requestName: String, parameters: NSDictionary?)
     {
-        print(result.error ?? "")
+        print("\(requestName)---\(error)---")
     }
 }
 

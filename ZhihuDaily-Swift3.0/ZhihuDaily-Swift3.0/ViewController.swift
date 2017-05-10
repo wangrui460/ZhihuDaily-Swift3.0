@@ -12,6 +12,7 @@ import SwiftyJSON
 class ViewController: UIViewController
 {
     let requestLatestNews = "requestLatestNews"
+    var latestNews:News?
     
     override func viewDidLoad()
     {
@@ -28,14 +29,15 @@ extension ViewController: WRNetWrapperDelegate
     {
         if (requestName == requestLatestNews)
         {
-            let json = result as! JSON
+//            let json = result as! JSON
+            let news = News.parseJson(json: result as! [String:AnyObject])
             print("--------------------")
         }
     }
     
-    func netWortDidFailed (result:AnyObject,requestName:String,parameters:NSDictionary?)
+    func netWortDidFailed (result:AnyObject,error:Error?, requestName:String,parameters:NSDictionary?)
     {
-        print(result.error ?? "")
+        print(error ?? "")
     }
 }
 
