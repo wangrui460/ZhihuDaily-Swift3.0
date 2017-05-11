@@ -10,10 +10,18 @@
 		1A0EFA8C1EBD87CD008BEF60 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0EFA8B1EBD87CD008BEF60 /* Global.swift */; };
 		1A0F74A81EBF625D00D5F788 /* WRApiContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0F74A71EBF625D00D5F788 /* WRApiContainer.swift */; };
 		1A680F071EC30BDA00E24BD8 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A680F061EC30BDA00E24BD8 /* String+Extension.swift */; };
+		1A680F0B1EC45DB800E24BD8 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A680F0A1EC45DB800E24BD8 /* BaseViewController.swift */; };
+		1A680F0D1EC45DEE00E24BD8 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A680F0C1EC45DEE00E24BD8 /* BaseNavigationController.swift */; };
+		1A680F551EC4613C00E24BD8 /* MMDrawerBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A680F4D1EC4613C00E24BD8 /* MMDrawerBarButtonItem.m */; };
+		1A680F561EC4613C00E24BD8 /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A680F501EC4613C00E24BD8 /* MMDrawerController.m */; };
+		1A680F571EC4613C00E24BD8 /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A680F521EC4613C00E24BD8 /* MMDrawerVisualState.m */; };
+		1A680F581EC4613C00E24BD8 /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A680F541EC4613C00E24BD8 /* UIViewController+MMDrawerController.m */; };
+		1A680F5F1EC4651900E24BD8 /* DrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A680F5D1EC4651900E24BD8 /* DrawerController.swift */; };
+		1A680F601EC4651900E24BD8 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A680F5E1EC4651900E24BD8 /* MainController.swift */; };
+		1A680F621EC465BD00E24BD8 /* LeftController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A680F611EC465BD00E24BD8 /* LeftController.swift */; };
 		1AAE31E71EC2A44200CCFAC1 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAE31E61EC2A44200CCFAC1 /* Story.swift */; };
 		1AAE31E91EC2BB5100CCFAC1 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAE31E81EC2BB5100CCFAC1 /* News.swift */; };
 		1AB8076D1EBC0D17007B070B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB8076C1EBC0D17007B070B /* AppDelegate.swift */; };
-		1AB8076F1EBC0D17007B070B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB8076E1EBC0D17007B070B /* ViewController.swift */; };
 		1AB807741EBC0D17007B070B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AB807731EBC0D17007B070B /* Assets.xcassets */; };
 		1AB807821EBC0D17007B070B /* ZhihuDaily_Swift3_0Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB807811EBC0D17007B070B /* ZhihuDaily_Swift3_0Tests.swift */; };
 		1AB8078E1EBC1200007B070B /* WRNetWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB8078D1EBC1200007B070B /* WRNetWrapper.swift */; };
@@ -35,11 +43,25 @@
 		1A0EFA8B1EBD87CD008BEF60 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		1A0F74A71EBF625D00D5F788 /* WRApiContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRApiContainer.swift; sourceTree = "<group>"; };
 		1A680F061EC30BDA00E24BD8 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		1A680F0A1EC45DB800E24BD8 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		1A680F0C1EC45DEE00E24BD8 /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		1A680F4C1EC4613C00E24BD8 /* MMDrawerBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerBarButtonItem.h; sourceTree = "<group>"; };
+		1A680F4D1EC4613C00E24BD8 /* MMDrawerBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerBarButtonItem.m; sourceTree = "<group>"; };
+		1A680F4E1EC4613C00E24BD8 /* MMDrawerController+Subclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MMDrawerController+Subclass.h"; sourceTree = "<group>"; };
+		1A680F4F1EC4613C00E24BD8 /* MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerController.h; sourceTree = "<group>"; };
+		1A680F501EC4613C00E24BD8 /* MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerController.m; sourceTree = "<group>"; };
+		1A680F511EC4613C00E24BD8 /* MMDrawerVisualState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerVisualState.h; sourceTree = "<group>"; };
+		1A680F521EC4613C00E24BD8 /* MMDrawerVisualState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerVisualState.m; sourceTree = "<group>"; };
+		1A680F531EC4613C00E24BD8 /* UIViewController+MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MMDrawerController.h"; sourceTree = "<group>"; };
+		1A680F541EC4613C00E24BD8 /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
+		1A680F591EC4625300E24BD8 /* ZhihuDaily-Bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ZhihuDaily-Bridge.h"; sourceTree = "<group>"; };
+		1A680F5D1EC4651900E24BD8 /* DrawerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerController.swift; sourceTree = "<group>"; };
+		1A680F5E1EC4651900E24BD8 /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		1A680F611EC465BD00E24BD8 /* LeftController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftController.swift; sourceTree = "<group>"; };
 		1AAE31E61EC2A44200CCFAC1 /* Story.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		1AAE31E81EC2BB5100CCFAC1 /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		1AB807691EBC0D17007B070B /* ZhihuDaily-Swift3.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ZhihuDaily-Swift3.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AB8076C1EBC0D17007B070B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1AB8076E1EBC0D17007B070B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1AB807731EBC0D17007B070B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1AB807781EBC0D17007B070B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1AB8077D1EBC0D17007B070B /* ZhihuDaily-Swift3.0Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ZhihuDaily-Swift3.0Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +93,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A680F091EC45D9300E24BD8 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				1A680F0A1EC45DB800E24BD8 /* BaseViewController.swift */,
+				1A680F0C1EC45DEE00E24BD8 /* BaseNavigationController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		1A680F0E1EC45E7100E24BD8 /* Third */ = {
+			isa = PBXGroup;
+			children = (
+				1A680F4B1EC4613C00E24BD8 /* MMDrawerController */,
+			);
+			path = Third;
+			sourceTree = "<group>";
+		};
+		1A680F4B1EC4613C00E24BD8 /* MMDrawerController */ = {
+			isa = PBXGroup;
+			children = (
+				1A680F4C1EC4613C00E24BD8 /* MMDrawerBarButtonItem.h */,
+				1A680F4D1EC4613C00E24BD8 /* MMDrawerBarButtonItem.m */,
+				1A680F4E1EC4613C00E24BD8 /* MMDrawerController+Subclass.h */,
+				1A680F4F1EC4613C00E24BD8 /* MMDrawerController.h */,
+				1A680F501EC4613C00E24BD8 /* MMDrawerController.m */,
+				1A680F511EC4613C00E24BD8 /* MMDrawerVisualState.h */,
+				1A680F521EC4613C00E24BD8 /* MMDrawerVisualState.m */,
+				1A680F531EC4613C00E24BD8 /* UIViewController+MMDrawerController.h */,
+				1A680F541EC4613C00E24BD8 /* UIViewController+MMDrawerController.m */,
+			);
+			path = MMDrawerController;
+			sourceTree = "<group>";
+		};
+		1A680F5C1EC464EE00E24BD8 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				1A680F5D1EC4651900E24BD8 /* DrawerController.swift */,
+				1A680F5E1EC4651900E24BD8 /* MainController.swift */,
+				1A680F611EC465BD00E24BD8 /* LeftController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		1AAE31E51EC2A41B00CCFAC1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -105,10 +170,13 @@
 			children = (
 				1AB8076C1EBC0D17007B070B /* AppDelegate.swift */,
 				1A0EFA8B1EBD87CD008BEF60 /* Global.swift */,
+				1A680F591EC4625300E24BD8 /* ZhihuDaily-Bridge.h */,
 				1AB8078C1EBC1200007B070B /* NetWork */,
-				1AB8076E1EBC0D17007B070B /* ViewController.swift */,
-				1AAE31E51EC2A41B00CCFAC1 /* Model */,
 				1AE39DEE1EC2102D008092BC /* Extension */,
+				1AAE31E51EC2A41B00CCFAC1 /* Model */,
+				1A680F091EC45D9300E24BD8 /* Base */,
+				1A680F5C1EC464EE00E24BD8 /* Main */,
+				1A680F0E1EC45E7100E24BD8 /* Third */,
 				1AB807731EBC0D17007B070B /* Assets.xcassets */,
 				1AB807781EBC0D17007B070B /* Info.plist */,
 			);
@@ -212,6 +280,7 @@
 				TargetAttributes = {
 					1AB807681EBC0D17007B070B = {
 						CreatedOnToolsVersion = 8.1;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 					1AB8077C1EBC0D17007B070B = {
@@ -313,13 +382,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AAE31E71EC2A44200CCFAC1 /* Story.swift in Sources */,
+				1A680F551EC4613C00E24BD8 /* MMDrawerBarButtonItem.m in Sources */,
 				1A680F071EC30BDA00E24BD8 /* String+Extension.swift in Sources */,
+				1A680F581EC4613C00E24BD8 /* UIViewController+MMDrawerController.m in Sources */,
 				1A0F74A81EBF625D00D5F788 /* WRApiContainer.swift in Sources */,
 				1AAE31E91EC2BB5100CCFAC1 /* News.swift in Sources */,
+				1A680F561EC4613C00E24BD8 /* MMDrawerController.m in Sources */,
+				1A680F571EC4613C00E24BD8 /* MMDrawerVisualState.m in Sources */,
+				1A680F601EC4651900E24BD8 /* MainController.swift in Sources */,
 				1A0EFA8C1EBD87CD008BEF60 /* Global.swift in Sources */,
-				1AB8076F1EBC0D17007B070B /* ViewController.swift in Sources */,
+				1A680F0B1EC45DB800E24BD8 /* BaseViewController.swift in Sources */,
+				1A680F0D1EC45DEE00E24BD8 /* BaseNavigationController.swift in Sources */,
+				1A680F5F1EC4651900E24BD8 /* DrawerController.swift in Sources */,
 				1AE39DF01EC2105E008092BC /* UIView+Event.swift in Sources */,
 				1AB8076D1EBC0D17007B070B /* AppDelegate.swift in Sources */,
+				1A680F621EC465BD00E24BD8 /* LeftController.swift in Sources */,
 				1AB8078E1EBC1200007B070B /* WRNetWrapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -442,6 +519,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: 1204607318@qq.com (WEJACUJN8Y)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 1204607318@qq.com (WEJACUJN8Y)";
 				DEVELOPMENT_TEAM = "";
@@ -451,6 +529,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "a6bfd0cb-907a-40de-adb8-65e9f7ef6ae7";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "ZhihuDaily-Swift3.0/ZhihuDaily-Bridge.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -461,6 +541,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: 1204607318@qq.com (WEJACUJN8Y)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 1204607318@qq.com (WEJACUJN8Y)";
 				DEVELOPMENT_TEAM = "";
@@ -470,6 +551,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "a6bfd0cb-907a-40de-adb8-65e9f7ef6ae7";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "ZhihuDaily-Swift3.0/ZhihuDaily-Bridge.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

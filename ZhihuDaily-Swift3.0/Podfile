@@ -6,6 +6,9 @@
 #本地私有源
 #source 'https://git.oschina.net/scx/JLSpecs.git'
 
+# 本项目地址
+#source https://github.com/wangrui460
+
 # 修改过得第三方库
 
 

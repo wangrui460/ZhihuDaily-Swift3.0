@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-class ViewController: UIViewController
+class MainController: BaseViewController
 {
     let requestLatestNews = "requestLatestNews"
     var latestNews:News?
@@ -23,13 +23,12 @@ class ViewController: UIViewController
 }
 
 
-extension ViewController: WRNetWrapperDelegate
+extension MainController: WRNetWrapperDelegate
 {
     func netWortDidSuccess(result:AnyObject,requestName:String,parameters:NSDictionary?)
     {
         if (requestName == requestLatestNews)
         {
-//            let json = result as! JSON
             let news = News.parseJson(json: result as! [String:AnyObject])
             print(news.format_date)
             print("--------------------")

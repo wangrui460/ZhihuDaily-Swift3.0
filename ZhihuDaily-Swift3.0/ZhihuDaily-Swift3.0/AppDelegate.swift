@@ -16,29 +16,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     let requestSplashImage = "requestSplashImage"
-    let requestAppVersion = "requestAppVersion"
     var bgImageView:UIImageView? = UIImageView(frame: UIScreen.main.bounds)
     var advImageView:UIImageView?
     let jumpBtn = UIButton()
     let SPLASHIMAGE = "SPLASHIMAGE"
-    let navVC:UINavigationController = UINavigationController.init(rootViewController: ViewController())
+    let drawerController = DrawerController()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
     {
         WRApiContainer.requestSplashImage(reqName: requestSplashImage, delegate: self)
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = UIColor.white
-        window?.rootViewController = navVC
+        window?.rootViewController = drawerController
         window?.makeKeyAndVisible()
         
         addAdvertisement()
         removeAdvertisement()
         return true
     }
-    
-    
+}
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+// MARK: - 启动闪屏广告相关
+extension AppDelegate
+{
     /// 添加广告
-    private func addAdvertisement()
+    fileprivate func addAdvertisement()
     {
         bgImageView?.image = UIImage(named: "backImage")
         window!.addSubview(bgImageView!)
@@ -75,34 +79,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             {
                 weakSelf.bgImageView?.removeFromSuperview()
                 weakSelf.bgImageView = nil
-                WRApiContainer.requestAppVersion(reqName: weakSelf.requestAppVersion, delegate: weakSelf)
+                weakSelf.drawerController.checkAppVersion()
             }
         }
         jumpBtn.isHidden = true
     }
-
+    
     /// 移除广告
-    private func removeAdvertisement()
+    fileprivate func removeAdvertisement()
     {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute:
-        {
-            UIView.animate(withDuration: 1.0, animations:
             {
-                self.advImageView?.alpha = 0
-                self.bgImageView?.alpha = 0
-            },completion: { (finish) in
-                self.bgImageView?.removeFromSuperview()
-                if self.bgImageView != nil {
-                    WRApiContainer.requestAppVersion(reqName: self.requestAppVersion, delegate: self)
-                }
-                self.bgImageView = nil
-            })
+                UIView.animate(withDuration: 1.0, animations:
+                    {
+                        self.advImageView?.alpha = 0
+                        self.bgImageView?.alpha = 0
+                },completion: { (finish) in
+                    self.bgImageView?.removeFromSuperview()
+                    if self.bgImageView != nil {
+                        self.drawerController.checkAppVersion()
+                    }
+                    self.bgImageView = nil
+                })
         })
     }
 }
 
 
-
+//////////////////////////////////////////////////////////////////////////////////////////
 // MARK: - WRNetWrapperDelegate
 extension AppDelegate: WRNetWrapperDelegate
 {
@@ -129,27 +133,6 @@ extension AppDelegate: WRNetWrapperDelegate
                 }
             })
             return
-        }
-        
-        if (requestName == requestAppVersion)
-        {
-            let json = JSON(result)
-            let status = json["status"].int
-            if status == 1
-            {
-                let msg    = json["msg"].string
-                let alertVC = UIAlertController(title: "版本更新提示", message: msg, preferredStyle: .alert)
-                let sureAction = UIAlertAction(title: "前往", style: .destructive, handler:
-                    { (success) in
-                        // 因为不知道知乎日报的appid，所以这里就调到AppStore的首页
-                        let url = URL(string: "itms-apps://itunes.apple.com/")
-                        UIApplication.shared.open(url!, options: [:], completionHandler: nil)
-                })
-                let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
-                alertVC.addAction(cancelAction)
-                alertVC.addAction(sureAction)
-                navVC.present(alertVC, animated: true, completion: nil)
-            }
         }
     }
     
