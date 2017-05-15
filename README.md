@@ -59,4 +59,14 @@
 
 ---
 
+#### **7.  2017.05.15**
+- 添加主页基本tableView和图片
+- 完成导航栏透明渐变效果
+
+**注意：**
+
+- 导航栏透明渐变效果使用了我的另一个开源框架  [WRNavigationBar_swift](https://github.com/wangrui460/WRNavigationBar_swift)
+
+---
+
 ### 你觉得对你有所帮助的话，请献上宝贵的Star！！！ 不胜感激！！！
