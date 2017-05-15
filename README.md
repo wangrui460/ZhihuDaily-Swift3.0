@@ -60,12 +60,14 @@
 ---
 
 #### **7.  2017.05.15**
-- 添加主页基本tableView和图片
+- 添加主页基本tableView
 - 完成导航栏透明渐变效果
+- 初步完成图片无线轮播效果
 
 **注意：**
 
 - 导航栏透明渐变效果使用了我的另一个开源框架  [WRNavigationBar_swift](https://github.com/wangrui460/WRNavigationBar_swift)
+- 图片无限轮播功能使用了我的另一个开源框架[WRCycleScrollView](https://github.com/wangrui460/WRCycleScrollView)
 
 ---
 
