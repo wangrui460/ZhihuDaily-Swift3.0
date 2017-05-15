@@ -62,8 +62,13 @@ class WRCycleScrollView: UIView
     ///////////////////////////////////////////////////////
     // 对外提供的方法
     func reloadData() {
+        timer?.invalidate()
+        timer = nil
         collectionView?.reloadData()
         changeToFirstCycleCell(animated: false)
+        if isAutoScroll == true {
+            setupTimer()
+        }
     }
     
     
@@ -72,6 +77,7 @@ class WRCycleScrollView: UIView
     fileprivate var flowLayout:UICollectionViewFlowLayout?
     fileprivate var collectionView:UICollectionView?
     fileprivate let CellID = "WRCycleCell"
+    fileprivate var isLoadOver = false
     
     fileprivate var timer:Timer?
     fileprivate var imgsCount:Int {
@@ -82,10 +88,19 @@ class WRCycleScrollView: UIView
         }
     }
     fileprivate var realItemCount:Int {
-        if imgsType == .LOCAL {
-            return (isEndlessScroll == true) ? localImgArray!.count * 128 : localImgArray!.count
-        } else {
-            return (isEndlessScroll == true) ? serverImgArray!.count * 128 : serverImgArray!.count
+        if imgsType == .LOCAL
+        {
+            guard let local = localImgArray else {
+                return 0
+            }
+            return (isEndlessScroll == true) ? local.count * 128 : local.count
+        }
+        else
+        {
+            guard let server = serverImgArray else {
+                return 0
+            }
+            return (isEndlessScroll == true) ? server.count * 128 : server.count
         }
     }
     
@@ -132,7 +147,9 @@ class WRCycleScrollView: UIView
         super.layoutSubviews()
         // 解决WRCycleCell自动偏移问题
         collectionView?.contentInset = .zero
-        changeToFirstCycleCell(animated: false)
+        if isLoadOver == false {
+            changeToFirstCycleCell(animated: false)
+        }
     }
     
     // 解决定时器导致的循环引用
@@ -159,11 +176,13 @@ extension WRCycleScrollView
     
     fileprivate func changeToFirstCycleCell(animated:Bool)
     {
-        guard let collection = collectionView else {
-            return
+        guard realItemCount  != 0 ,
+            let collection = collectionView,
+            let _ = flowLayout else {
+                return
         }
-        let item = (isEndlessScroll == true) ? (realItemCount / 2) : 0
-        let indexPath = IndexPath(item: item, section: 0)
+        let firstItem = (isEndlessScroll == true) ? (realItemCount / 2) : 0
+        let indexPath = IndexPath(item: firstItem, section: 0)
         collection.scrollToItem(at: indexPath, at: .init(rawValue: 0), animated: animated)
     }
     
@@ -205,6 +224,10 @@ extension WRCycleScrollView
                 return
         }
         let curItem = Int(collection.contentOffset.x / layout.itemSize.width)
+        let firstItem = (isEndlessScroll == true) ? (realItemCount / 2) : 0
+        if curItem >= firstItem {
+            isLoadOver = true
+        }
         let indexOnPageControl = curItem % imgsCount
         delegate?.cycleScrollViewDidScroll?(to: indexOnPageControl, cycleScrollView: self)
     }
