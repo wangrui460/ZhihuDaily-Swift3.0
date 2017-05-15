@@ -20,6 +20,8 @@
 		1A680F601EC4651900E24BD8 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A680F5E1EC4651900E24BD8 /* MainController.swift */; };
 		1A680F621EC465BD00E24BD8 /* LeftController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A680F611EC465BD00E24BD8 /* LeftController.swift */; };
 		1AA730E91EC94547001800FB /* UINavigationBar+WRAddition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA730E81EC94547001800FB /* UINavigationBar+WRAddition.swift */; };
+		1AA730ED1EC94D27001800FB /* WRCycleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA730EB1EC94D27001800FB /* WRCycleCell.swift */; };
+		1AA730EE1EC94D27001800FB /* WRCycleScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA730EC1EC94D27001800FB /* WRCycleScrollView.swift */; };
 		1AAE31E71EC2A44200CCFAC1 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAE31E61EC2A44200CCFAC1 /* Story.swift */; };
 		1AAE31E91EC2BB5100CCFAC1 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAE31E81EC2BB5100CCFAC1 /* News.swift */; };
 		1AB8076D1EBC0D17007B070B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB8076C1EBC0D17007B070B /* AppDelegate.swift */; };
@@ -60,6 +62,8 @@
 		1A680F5E1EC4651900E24BD8 /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		1A680F611EC465BD00E24BD8 /* LeftController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftController.swift; sourceTree = "<group>"; };
 		1AA730E81EC94547001800FB /* UINavigationBar+WRAddition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+WRAddition.swift"; sourceTree = "<group>"; };
+		1AA730EB1EC94D27001800FB /* WRCycleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRCycleCell.swift; sourceTree = "<group>"; };
+		1AA730EC1EC94D27001800FB /* WRCycleScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRCycleScrollView.swift; sourceTree = "<group>"; };
 		1AAE31E61EC2A44200CCFAC1 /* Story.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		1AAE31E81EC2BB5100CCFAC1 /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		1AB807691EBC0D17007B070B /* ZhihuDaily-Swift3.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ZhihuDaily-Swift3.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,6 +111,7 @@
 		1A680F0E1EC45E7100E24BD8 /* Third */ = {
 			isa = PBXGroup;
 			children = (
+				1AA730EA1EC94D27001800FB /* WRCycleScrollView */,
 				1AA730E71EC94547001800FB /* WRNavigationBar */,
 				1A680F4B1EC4613C00E24BD8 /* MMDrawerController */,
 			);
@@ -145,6 +150,15 @@
 				1AA730E81EC94547001800FB /* UINavigationBar+WRAddition.swift */,
 			);
 			path = WRNavigationBar;
+			sourceTree = "<group>";
+		};
+		1AA730EA1EC94D27001800FB /* WRCycleScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				1AA730EB1EC94D27001800FB /* WRCycleCell.swift */,
+				1AA730EC1EC94D27001800FB /* WRCycleScrollView.swift */,
+			);
+			path = WRCycleScrollView;
 			sourceTree = "<group>";
 		};
 		1AAE31E51EC2A41B00CCFAC1 /* Model */ = {
@@ -393,6 +407,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AAE31E71EC2A44200CCFAC1 /* Story.swift in Sources */,
+				1AA730EE1EC94D27001800FB /* WRCycleScrollView.swift in Sources */,
 				1A680F551EC4613C00E24BD8 /* MMDrawerBarButtonItem.m in Sources */,
 				1A680F071EC30BDA00E24BD8 /* String+Extension.swift in Sources */,
 				1A680F581EC4613C00E24BD8 /* UIViewController+MMDrawerController.m in Sources */,
@@ -404,6 +419,7 @@
 				1A680F601EC4651900E24BD8 /* MainController.swift in Sources */,
 				1A0EFA8C1EBD87CD008BEF60 /* Global.swift in Sources */,
 				1A680F0B1EC45DB800E24BD8 /* BaseViewController.swift in Sources */,
+				1AA730ED1EC94D27001800FB /* WRCycleCell.swift in Sources */,
 				1A680F0D1EC45DEE00E24BD8 /* BaseNavigationController.swift in Sources */,
 				1A680F5F1EC4651900E24BD8 /* DrawerController.swift in Sources */,
 				1AE39DF01EC2105E008092BC /* UIView+Event.swift in Sources */,

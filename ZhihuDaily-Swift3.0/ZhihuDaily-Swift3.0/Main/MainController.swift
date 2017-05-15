@@ -28,21 +28,31 @@ class MainController: BaseViewController
         table.dataSource = self
         return table
     }()
-    lazy var imageView:UIImageView = {
-        let imgView = UIImageView(frame: CGRect(x: 0, y: -IMAGE_HEIGHT, width: CGFloat(kScreenWidth), height: IMAGE_HEIGHT))
-        imgView.contentMode = UIViewContentMode.scaleAspectFill
-        imgView.clipsToBounds = true
-        imgView.image = self.imageScaledToSize(image: UIImage(named: "我")!, newSize: CGSize(width: CGFloat(kScreenWidth), height: IMAGE_HEIGHT+SCROLL_DOWN_LIMIT))
-        return imgView
+    lazy var cycleScrollView:WRCycleScrollView = {
+        let frame = CGRect(x: 0, y: -IMAGE_HEIGHT, width: CGFloat(kScreenWidth), height: IMAGE_HEIGHT)
+        let localImages = ["localImg6","localImg7","localImg8","localImg9","localImg10"]
+        let descs = ["韩国防部回应停止部署萨德:遵照最高统帅指导方针",
+                     "勒索病毒攻击再次爆发 国内校园网大面积感染",
+                     "Win10秋季更新重磅功能：跟安卓与iOS无缝连接",
+                     "《琅琊榜2》为何没有胡歌？胡歌：我看过剧本，离开是种保护",
+                     "阿米尔汗在印度的影响力，我国的哪位影视明星能与之齐名呢？"]
+        let cycleView = WRCycleScrollView(frame: frame, type: .LOCAL, imgs: localImages, descs: descs)
+        return cycleView
     }()
+//    lazy var imageView:UIImageView = {
+//        let imgView = UIImageView(frame: CGRect(x: 0, y: -IMAGE_HEIGHT, width: CGFloat(kScreenWidth), height: IMAGE_HEIGHT))
+//        imgView.contentMode = UIViewContentMode.scaleAspectFill
+//        imgView.clipsToBounds = true
+//        imgView.image = self.imageScaledToSize(image: UIImage(named: "我")!, newSize: CGSize(width: CGFloat(kScreenWidth), height: IMAGE_HEIGHT+SCROLL_DOWN_LIMIT))
+//        return imgView
+//    }()
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         WRApiContainer.requestLatestNews(reqName: requestLatestNews, delegate: self)
-        view.backgroundColor = UIColor.white
         self.title = "知乎日报"
-        tableView.addSubview(imageView)
+        tableView.addSubview(cycleScrollView)
         view.addSubview(tableView)
         navigationController?.navigationBar.barStyle = .black
         navigationController?.navigationBar.wr_setBackgroundColor(color: .clear)
@@ -77,7 +87,7 @@ extension MainController: UITableViewDelegate,UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = UITableViewCell.init(style: .default, reuseIdentifier: nil)
-        let str = String(format: "WRNavigationBar %zd", indexPath.row)
+        let str = String(format: "知乎日报 %zd", indexPath.row)
         cell.textLabel?.text = str
         cell.textLabel?.font = UIFont.systemFont(ofSize: 15)
         return cell
@@ -88,7 +98,7 @@ extension MainController: UITableViewDelegate,UITableViewDataSource
         tableView.deselectRow(at: indexPath, animated: true)
         let vc:UIViewController = UIViewController()
         vc.view.backgroundColor = UIColor.red
-        let str = String(format: "WRNavigationBar %zd", indexPath.row)
+        let str = String(format: "知乎日报 %zd", indexPath.row)
         vc.title = str
         navigationController?.pushViewController(vc, animated: true)
     }
@@ -136,7 +146,7 @@ extension MainController
         let newOffsetY = scrollView.contentOffset.y
         if (newOffsetY < -IMAGE_HEIGHT)
         {
-            imageView.frame = CGRect(x: 0, y: newOffsetY, width: CGFloat(kScreenWidth), height: -newOffsetY)
+            cycleScrollView.frame = CGRect(x: 0, y: newOffsetY, width: CGFloat(kScreenWidth), height: -newOffsetY)
         }
     }
     
