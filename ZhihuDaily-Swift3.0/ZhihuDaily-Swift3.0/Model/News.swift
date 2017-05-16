@@ -24,22 +24,20 @@ struct News
         return "\(month)月\(day)日 \(date.currentWeekDay())"
     }
     var topStoryImgs:[String]? {
-        var imgs = [String]()
         guard let topStories = top_stories else {
             return nil
         }
-        for story in topStories {
-            imgs.append(story.image)
+        let imgs = topStories.map { (story) -> String in
+            return story.image
         }
         return imgs
     }
     var topStoryTitles:[String]? {
-        var titles = [String]()
         guard let topStories = top_stories else {
             return nil
         }
-        for story in topStories {
-            titles.append(story.title)
+        let titles = topStories.map{(story) -> String in
+            return story.title
         }
         return titles
     }
@@ -56,7 +54,6 @@ extension News
         var stories:[Story]?
         if let storiesDicts = json["stories"] as? [[String:AnyObject]]
         {
-            
             stories = storiesDicts.map({ (tempJson) -> Story in
                 return Story.parseJson(json: tempJson)
             })
