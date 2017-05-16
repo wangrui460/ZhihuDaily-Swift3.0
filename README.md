@@ -71,4 +71,16 @@
 
 ---
 
+#### **8.  2017.05.16**
+
+- 完成主页的无线轮播效果，并且添加pageControl，解决滚动和拖拽过程中的一些bug
+
+**注意：**
+
+- 我就是给自己打广告，强烈推荐我的这两个框架   
+- [https://github.com/wangrui460/WRNavigationBar](https://github.com/wangrui460/WRNavigationBar)   **求star，求包养**
+- [https://github.com/wangrui460/WRCycleScrollView](https://github.com/wangrui460/WRCycleScrollView)**求star，求包养**
+
+---
+
 ### 你觉得对你有所帮助的话，请献上宝贵的Star！！！ 不胜感激！！！
