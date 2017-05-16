@@ -10,7 +10,7 @@ import UIKit
 import SwiftyJSON
 
 private let NAVBAR_COLORCHANGE_POINT:CGFloat = -80
-private let IMAGE_HEIGHT:CGFloat = 260
+private let IMAGE_HEIGHT:CGFloat = 210
 private let SCROLL_DOWN_LIMIT:CGFloat = 100
 private let LIMIT_OFFSET_Y:CGFloat = -(IMAGE_HEIGHT + SCROLL_DOWN_LIMIT)
 private let MainNavBarColor = UIColor.init(red: 0/255.0, green: 175/255.0, blue: 240/255.0, alpha: 1)
@@ -30,22 +30,9 @@ class MainController: BaseViewController
     }()
     lazy var cycleScrollView:WRCycleScrollView = {
         let frame = CGRect(x: 0, y: -IMAGE_HEIGHT, width: CGFloat(kScreenWidth), height: IMAGE_HEIGHT)
-//        let localImages = ["localImg6","localImg7","localImg8","localImg9","localImg10"]
-//        let descs = ["韩国防部回应停止部署萨德:遵照最高统帅指导方针",
-//                     "勒索病毒攻击再次爆发 国内校园网大面积感染",
-//                     "Win10秋季更新重磅功能：跟安卓与iOS无缝连接",
-//                     "《琅琊榜2》为何没有胡歌？胡歌：我看过剧本，离开是种保护",
-//                     "阿米尔汗在印度的影响力，我国的哪位影视明星能与之齐名呢？"]
         let cycleView = WRCycleScrollView(frame: frame, type: .LOCAL, imgs: nil, descs: nil)
         return cycleView
     }()
-//    lazy var imageView:UIImageView = {
-//        let imgView = UIImageView(frame: CGRect(x: 0, y: -IMAGE_HEIGHT, width: CGFloat(kScreenWidth), height: IMAGE_HEIGHT))
-//        imgView.contentMode = UIViewContentMode.scaleAspectFill
-//        imgView.clipsToBounds = true
-//        imgView.image = self.imageScaledToSize(image: UIImage(named: "我")!, newSize: CGSize(width: CGFloat(kScreenWidth), height: IMAGE_HEIGHT+SCROLL_DOWN_LIMIT))
-//        return imgView
-//    }()
     
     override func viewDidLoad()
     {

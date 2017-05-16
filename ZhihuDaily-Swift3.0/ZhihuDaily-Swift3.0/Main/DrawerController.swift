@@ -56,7 +56,7 @@ extension DrawerController: WRNetWrapperDelegate
                     { (success) in
                         // 因为不知道知乎日报的appid，所以这里就调到AppStore的首页
                         let url = URL(string: "itms-apps://itunes.apple.com/")
-                        UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+                        UIApplication.shared.openURL(url!)
                 })
                 let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
                 alertVC.addAction(cancelAction)

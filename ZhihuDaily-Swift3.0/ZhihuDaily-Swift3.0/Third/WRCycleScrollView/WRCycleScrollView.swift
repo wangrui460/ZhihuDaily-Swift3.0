@@ -58,6 +58,22 @@ class WRCycleScrollView: UIView
             }
         }
     }
+    var showPageControl: Bool = true {
+        didSet {
+//            self.pageControl?.isHidden = !showPageControl
+            setupPageControl()
+        }
+    }
+    var currentDotColor: UIColor = UIColor.orange {
+        didSet {
+            self.pageControl?.currentPageIndicatorTintColor = currentDotColor
+        }
+    }
+    var otherDotColor: UIColor = UIColor.gray {
+        didSet {
+            self.pageControl?.pageIndicatorTintColor = otherDotColor
+        }
+    }
     
     ///////////////////////////////////////////////////////
     // 对外提供的方法
@@ -66,6 +82,7 @@ class WRCycleScrollView: UIView
         timer = nil
         collectionView?.reloadData()
         changeToFirstCycleCell(animated: false)
+        setupPageControl()
         if isAutoScroll == true {
             setupTimer()
         }
@@ -77,26 +94,32 @@ class WRCycleScrollView: UIView
     fileprivate var flowLayout:UICollectionViewFlowLayout?
     fileprivate var collectionView:UICollectionView?
     fileprivate let CellID = "WRCycleCell"
+    // 标识子控件是否布局完成，布局完成后在layoutSubviews方法中就不执行 changeToFirstCycleCell 方法
     fileprivate var isLoadOver = false
-    
+    fileprivate var pageControl:UIPageControl?
     fileprivate var timer:Timer?
     fileprivate var imgsCount:Int {
         if imgsType == .LOCAL {
-            return localImgArray!.count
-        } else {
-            return serverImgArray!.count
+            guard let local = localImgArray else {
+                return 0
+            }
+            return local.count
+        }
+        else {
+            guard let server = serverImgArray else {
+                return 0
+            }
+            return server.count
         }
     }
     fileprivate var realItemCount:Int {
-        if imgsType == .LOCAL
-        {
+        if imgsType == .LOCAL {
             guard let local = localImgArray else {
                 return 0
             }
             return (isEndlessScroll == true) ? local.count * 128 : local.count
         }
-        else
-        {
+        else {
             guard let server = serverImgArray else {
                 return 0
             }
@@ -130,6 +153,7 @@ class WRCycleScrollView: UIView
             descTextArray = descTexts
         }
         setupCollectionView()
+        setupPageControl()
         if isAutoScroll == true {
             setupTimer()
         }
@@ -149,6 +173,13 @@ class WRCycleScrollView: UIView
         collectionView?.contentInset = .zero
         if isLoadOver == false {
             changeToFirstCycleCell(animated: false)
+        }
+        if showPageControl == true {
+            let pageW = bounds.width
+            let pageH:CGFloat = 20
+            let pageX = bounds.origin.x
+            let pageY = bounds.height -  pageH
+            self.pageControl?.frame = CGRect(x:pageX, y:pageY, width:pageW, height:pageH)
         }
     }
     
@@ -190,9 +221,9 @@ extension WRCycleScrollView
     func changeCycleCell()
     {
         guard realItemCount  != 0 ,
-              let collection = collectionView,
-              let layout = flowLayout else {
-            return
+            let collection = collectionView,
+            let layout = flowLayout else {
+                return
         }
         let curItem = Int(collection.contentOffset.x / layout.itemSize.width)
         if curItem == realItemCount - 1
@@ -215,6 +246,15 @@ extension WRCycleScrollView
         if isAutoScroll == true {
             setupTimer()
         }
+        guard realItemCount  != 0 ,
+            let collection = collectionView,
+            let layout = flowLayout else {
+                return
+        }
+        let curItem = Int(collection.contentOffset.x / layout.itemSize.width)
+        let indexOnPageControl = (curItem % imgsCount + 1 == imgsCount) ? 0 : curItem % imgsCount + 1
+        delegate?.cycleScrollViewDidScroll?(to: indexOnPageControl, cycleScrollView: self)
+        pageControl?.currentPage = indexOnPageControl
     }
     func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView)
     {
@@ -230,6 +270,27 @@ extension WRCycleScrollView
         }
         let indexOnPageControl = curItem % imgsCount
         delegate?.cycleScrollViewDidScroll?(to: indexOnPageControl, cycleScrollView: self)
+        pageControl?.currentPage = indexOnPageControl
+    }
+}
+
+
+// MARK: - pageControl页面
+extension WRCycleScrollView
+{
+    fileprivate func setupPageControl()
+    {
+        pageControl?.removeFromSuperview()
+        if showPageControl == true
+        {
+            pageControl = UIPageControl()
+            pageControl?.numberOfPages = imgsCount
+            pageControl?.hidesForSinglePage = true
+            pageControl?.currentPageIndicatorTintColor = self.currentDotColor
+            pageControl?.pageIndicatorTintColor = self.otherDotColor
+            pageControl?.isUserInteractionEnabled = false
+            addSubview(pageControl!)
+        }
     }
 }
 

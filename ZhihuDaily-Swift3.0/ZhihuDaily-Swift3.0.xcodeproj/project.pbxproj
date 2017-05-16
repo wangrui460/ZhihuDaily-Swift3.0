@@ -20,14 +20,15 @@
 		1A680F601EC4651900E24BD8 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A680F5E1EC4651900E24BD8 /* MainController.swift */; };
 		1A680F621EC465BD00E24BD8 /* LeftController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A680F611EC465BD00E24BD8 /* LeftController.swift */; };
 		1AA730E91EC94547001800FB /* UINavigationBar+WRAddition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA730E81EC94547001800FB /* UINavigationBar+WRAddition.swift */; };
-		1AA730ED1EC94D27001800FB /* WRCycleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA730EB1EC94D27001800FB /* WRCycleCell.swift */; };
-		1AA730EE1EC94D27001800FB /* WRCycleScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA730EC1EC94D27001800FB /* WRCycleScrollView.swift */; };
 		1AAE31E71EC2A44200CCFAC1 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAE31E61EC2A44200CCFAC1 /* Story.swift */; };
 		1AAE31E91EC2BB5100CCFAC1 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAE31E81EC2BB5100CCFAC1 /* News.swift */; };
 		1AB8076D1EBC0D17007B070B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB8076C1EBC0D17007B070B /* AppDelegate.swift */; };
 		1AB807741EBC0D17007B070B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AB807731EBC0D17007B070B /* Assets.xcassets */; };
 		1AB807821EBC0D17007B070B /* ZhihuDaily_Swift3_0Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB807811EBC0D17007B070B /* ZhihuDaily_Swift3_0Tests.swift */; };
 		1AB8078E1EBC1200007B070B /* WRNetWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB8078D1EBC1200007B070B /* WRNetWrapper.swift */; };
+		1ACAF8081ECB0AC40003A4A1 /* WRCycleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACAF8051ECB0AC40003A4A1 /* WRCycleCell.swift */; };
+		1ACAF8091ECB0AC40003A4A1 /* WRCycleScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACAF8061ECB0AC40003A4A1 /* WRCycleScrollView.swift */; };
+		1ACAF80A1ECB0AC40003A4A1 /* WRProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACAF8071ECB0AC40003A4A1 /* WRProxy.swift */; };
 		1AE39DF01EC2105E008092BC /* UIView+Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE39DEF1EC2105E008092BC /* UIView+Event.swift */; };
 		AE3A5C601E1BC1BDAE5DA84B /* Pods_ZhihuDaily_Swift3_0.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBC724E033634DB27B0994AB /* Pods_ZhihuDaily_Swift3_0.framework */; };
 /* End PBXBuildFile section */
@@ -62,8 +63,6 @@
 		1A680F5E1EC4651900E24BD8 /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		1A680F611EC465BD00E24BD8 /* LeftController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftController.swift; sourceTree = "<group>"; };
 		1AA730E81EC94547001800FB /* UINavigationBar+WRAddition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+WRAddition.swift"; sourceTree = "<group>"; };
-		1AA730EB1EC94D27001800FB /* WRCycleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRCycleCell.swift; sourceTree = "<group>"; };
-		1AA730EC1EC94D27001800FB /* WRCycleScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRCycleScrollView.swift; sourceTree = "<group>"; };
 		1AAE31E61EC2A44200CCFAC1 /* Story.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		1AAE31E81EC2BB5100CCFAC1 /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		1AB807691EBC0D17007B070B /* ZhihuDaily-Swift3.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ZhihuDaily-Swift3.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,6 +73,9 @@
 		1AB807811EBC0D17007B070B /* ZhihuDaily_Swift3_0Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZhihuDaily_Swift3_0Tests.swift; sourceTree = "<group>"; };
 		1AB807831EBC0D17007B070B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1AB8078D1EBC1200007B070B /* WRNetWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRNetWrapper.swift; sourceTree = "<group>"; };
+		1ACAF8051ECB0AC40003A4A1 /* WRCycleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRCycleCell.swift; sourceTree = "<group>"; };
+		1ACAF8061ECB0AC40003A4A1 /* WRCycleScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRCycleScrollView.swift; sourceTree = "<group>"; };
+		1ACAF8071ECB0AC40003A4A1 /* WRProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRProxy.swift; sourceTree = "<group>"; };
 		1AE39DEF1EC2105E008092BC /* UIView+Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Event.swift"; sourceTree = "<group>"; };
 		DBC724E033634DB27B0994AB /* Pods_ZhihuDaily_Swift3_0.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZhihuDaily_Swift3_0.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCBCED4F27CAC29AA5E54C38 /* Pods-ZhihuDaily-Swift3.0.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhihuDaily-Swift3.0.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZhihuDaily-Swift3.0/Pods-ZhihuDaily-Swift3.0.debug.xcconfig"; sourceTree = "<group>"; };
@@ -111,7 +113,7 @@
 		1A680F0E1EC45E7100E24BD8 /* Third */ = {
 			isa = PBXGroup;
 			children = (
-				1AA730EA1EC94D27001800FB /* WRCycleScrollView */,
+				1ACAF8041ECB0AC40003A4A1 /* WRCycleScrollView */,
 				1AA730E71EC94547001800FB /* WRNavigationBar */,
 				1A680F4B1EC4613C00E24BD8 /* MMDrawerController */,
 			);
@@ -150,15 +152,6 @@
 				1AA730E81EC94547001800FB /* UINavigationBar+WRAddition.swift */,
 			);
 			path = WRNavigationBar;
-			sourceTree = "<group>";
-		};
-		1AA730EA1EC94D27001800FB /* WRCycleScrollView */ = {
-			isa = PBXGroup;
-			children = (
-				1AA730EB1EC94D27001800FB /* WRCycleCell.swift */,
-				1AA730EC1EC94D27001800FB /* WRCycleScrollView.swift */,
-			);
-			path = WRCycleScrollView;
 			sourceTree = "<group>";
 		};
 		1AAE31E51EC2A41B00CCFAC1 /* Model */ = {
@@ -224,6 +217,16 @@
 				1A0F74A71EBF625D00D5F788 /* WRApiContainer.swift */,
 			);
 			path = NetWork;
+			sourceTree = "<group>";
+		};
+		1ACAF8041ECB0AC40003A4A1 /* WRCycleScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				1ACAF8051ECB0AC40003A4A1 /* WRCycleCell.swift */,
+				1ACAF8061ECB0AC40003A4A1 /* WRCycleScrollView.swift */,
+				1ACAF8071ECB0AC40003A4A1 /* WRProxy.swift */,
+			);
+			path = WRCycleScrollView;
 			sourceTree = "<group>";
 		};
 		1AE39DEE1EC2102D008092BC /* Extension */ = {
@@ -305,6 +308,7 @@
 				TargetAttributes = {
 					1AB807681EBC0D17007B070B = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 652U6LDTX4;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
@@ -407,11 +411,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AAE31E71EC2A44200CCFAC1 /* Story.swift in Sources */,
-				1AA730EE1EC94D27001800FB /* WRCycleScrollView.swift in Sources */,
+				1ACAF8091ECB0AC40003A4A1 /* WRCycleScrollView.swift in Sources */,
 				1A680F551EC4613C00E24BD8 /* MMDrawerBarButtonItem.m in Sources */,
 				1A680F071EC30BDA00E24BD8 /* String+Extension.swift in Sources */,
 				1A680F581EC4613C00E24BD8 /* UIViewController+MMDrawerController.m in Sources */,
 				1A0F74A81EBF625D00D5F788 /* WRApiContainer.swift in Sources */,
+				1ACAF80A1ECB0AC40003A4A1 /* WRProxy.swift in Sources */,
 				1AAE31E91EC2BB5100CCFAC1 /* News.swift in Sources */,
 				1AA730E91EC94547001800FB /* UINavigationBar+WRAddition.swift in Sources */,
 				1A680F561EC4613C00E24BD8 /* MMDrawerController.m in Sources */,
@@ -419,7 +424,7 @@
 				1A680F601EC4651900E24BD8 /* MainController.swift in Sources */,
 				1A0EFA8C1EBD87CD008BEF60 /* Global.swift in Sources */,
 				1A680F0B1EC45DB800E24BD8 /* BaseViewController.swift in Sources */,
-				1AA730ED1EC94D27001800FB /* WRCycleCell.swift in Sources */,
+				1ACAF8081ECB0AC40003A4A1 /* WRCycleCell.swift in Sources */,
 				1A680F0D1EC45DEE00E24BD8 /* BaseNavigationController.swift in Sources */,
 				1A680F5F1EC4651900E24BD8 /* DrawerController.swift in Sources */,
 				1AE39DF01EC2105E008092BC /* UIView+Event.swift in Sources */,
@@ -549,13 +554,14 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: 1204607318@qq.com (WEJACUJN8Y)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 1204607318@qq.com (WEJACUJN8Y)";
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 652U6LDTX4;
 				INFOPLIST_FILE = "ZhihuDaily-Swift3.0/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "video.wangrui.com.ZhihuDaily-Swift3-0";
+				PRODUCT_BUNDLE_IDENTIFIER = video.wangrui.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a6bfd0cb-907a-40de-adb8-65e9f7ef6ae7";
+				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ZhihuDaily-Swift3.0/ZhihuDaily-Bridge.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -571,13 +577,14 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: 1204607318@qq.com (WEJACUJN8Y)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 1204607318@qq.com (WEJACUJN8Y)";
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 652U6LDTX4;
 				INFOPLIST_FILE = "ZhihuDaily-Swift3.0/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "video.wangrui.com.ZhihuDaily-Swift3-0";
+				PRODUCT_BUNDLE_IDENTIFIER = video.wangrui.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a6bfd0cb-907a-40de-adb8-65e9f7ef6ae7";
+				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ZhihuDaily-Swift3.0/ZhihuDaily-Bridge.h";
 				SWIFT_VERSION = 3.0;
